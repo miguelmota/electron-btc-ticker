@@ -2,7 +2,8 @@
 
 > Displays BTC/ETH ticker on the Mac OS X top menu bar.
 
-<img src="./screenshot.png" width="500px" />
+<img src="./screenshot.png" height="40" />
+<img src="./screenshot_dark.png" height="40" />
 
 ## Development
 
