@@ -7,9 +7,7 @@
 
 Format
 
-```
-BTC <btc current price> <btc price 24 hour change percentage> ETH <eth current price> <eth price 24 hour change percentage>
-```
+BTC *btc current price* *btc price 24 hour change percentage* ETH *eth current price* *eth price 24 hour change percentage*
 
 ## Development
 
