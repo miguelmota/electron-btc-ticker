@@ -33,7 +33,7 @@ exec(cmd, puts);
 
 function getImage(text) {
   var colors = isDark ? 'bg=black&fg=white' : 'bg=transparent&fg=black';
-  var url = 'http://lvh.me:9361/image?text=' + text +
+  var url = 'http://moogs.io:9361/image?text=' + text +
     '&size=12&width=160&height=20&' + colors;
 
   download(url)
