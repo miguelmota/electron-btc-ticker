@@ -18,13 +18,13 @@ var text = '';
 var lastText = '';
 
 function getImage(text) {
-  var url = 'http://moogs.io:9361/image?text=${text}';
+  var url = 'http://moogs.io:9361/image?text=' + text + '&size=12&width=160&height=20&bg=black&fg=white';
 
   download(url)
   .then(data => {
     fs.writeFileSync('icon.png', data);
 
-    // dummy icon required to update actual icon
+    // dummy icon required to update actual icon otherwise it doesn't work
     appIcon.setImage(imageFolder + '/icon-1.png');
     appIcon.setImage(trayImage);
   })
@@ -42,7 +42,7 @@ function fetch() {
     var btc = data[0];
     var eth = data[1];
 
-    text = 'BTC ${currencyFormatter.format(btc.priceUsd)} ETH ${currencyFormatter.format(eth.priceUsd)}';
+    text = 'BTC ' + currencyFormatter.format(btc.priceUsd) + ' ETH ' + currencyFormatter.format(eth.priceUsd);
 
     if (lastText !== text) {
       getImage(text);
