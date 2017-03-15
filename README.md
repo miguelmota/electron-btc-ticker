@@ -2,8 +2,14 @@
 
 > Displays BTC/ETH ticker on the Mac OS X top menu bar.
 
-<img src="./screenshot.png" height="40" />
-<img src="./screenshot_dark.png" height="40" />
+<img src="./screenshot.png" height="20" />
+<img src="./screenshot_dark.png" height="20" />
+
+Format
+
+```
+BTC <btc current price> <btc price 24 hour change percentage> ETH <eth current price> <eth price 24 hour change percentage>
+```
 
 ## Development
 
