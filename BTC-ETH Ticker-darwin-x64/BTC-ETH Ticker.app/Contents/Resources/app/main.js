@@ -33,8 +33,8 @@ exec(cmd, puts);
 
 function getImage(text) {
   var colors = isDark ? 'fg=white' : 'fg=black';
-  var url = 'http://moogs.io:9361/image?text=' + text +
-    '&size=12&width=160&height=20&bg=transparent&' + colors;
+  var url = 'http://text2png.moogs.io/image?text=' + encodeURIComponent(text) +
+    '&size=12&width=240&height=20&bg=transparent&' + colors;
 
   download(url)
   .then(data => {
@@ -59,7 +59,9 @@ function fetch() {
     var eth = data[1];
 
     text = 'BTC ' + currencyFormatter.format(btc.priceUsd) +
-      ' ETH ' + currencyFormatter.format(eth.priceUsd);
+           ' ' + btc.percentChange24H + '%' +
+           ' ETH ' + currencyFormatter.format(eth.priceUsd) +
+           ' ' + eth.percentChange24H + '%';
 
     if (lastText !== text) {
       getImage(text);
