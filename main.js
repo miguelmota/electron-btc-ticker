@@ -32,9 +32,9 @@ var cmd = 'if [ "$(uname)" == "Darwin" ]; then defaults read .GlobalPreferences 
 exec(cmd, puts);
 
 function getImage(text) {
-  var colors = isDark ? 'bg=black&fg=white' : 'bg=transparent&fg=black';
+  var colors = isDark ? 'fg=white' : 'fg=black';
   var url = 'http://moogs.io:9361/image?text=' + text +
-    '&size=12&width=160&height=20&' + colors;
+    '&size=12&width=160&height=20&bg=transparent&' + colors;
 
   download(url)
   .then(data => {
