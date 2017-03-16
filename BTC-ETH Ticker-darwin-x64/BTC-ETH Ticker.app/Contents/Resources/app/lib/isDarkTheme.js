@@ -4,8 +4,8 @@ var cmd = 'if [ "$(uname)" == "Darwin" ]; then defaults read .GlobalPreferences 
 function isDarkTheme() {
   return new Promise((resolve, reject) => {
     exec(cmd, (error, stdout, stderr) => {
-      if (error) return reject(error);
-      if (stderr) return reject(stderr);
+      if (error) return resolve(false);
+      if (stderr) return resolve(false);
       resolve(parseInt(stdout, 10) === 1);
     });
   });

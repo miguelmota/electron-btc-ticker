@@ -14,11 +14,6 @@ var appIcon;
 var imageFolder = __dirname;
 var trayImage = imageFolder + '/icon.png';
 var lastText = '';
-var isDark = false;
-
-isDarkTheme()
-.then(bool => (isDark = bool))
-.catch(error);
 
 app
 .on('ready', () => {
@@ -60,12 +55,16 @@ function fetch() {
 }
 
 function getImage(text) {
-  var color = isDark ? 'white' : 'black';
-  var url = 'http://text2png.moogs.io/image?text=' + encodeURIComponent(text) +
-    '&size=12&width=240&height=20&bg=transparent&fg=' + color;
+  return isDarkTheme()
+  .catch(error)
+  .then(isDark => {
+    var color = isDark ? 'white' : 'black';
+    var url = 'http://text2png.moogs.io/image?text=' + encodeURIComponent(text) +
+      '&size=12&width=240&height=20&bg=transparent&fg=' + color;
 
-  return download(url)
-  .then(data => fs.writeFileSync('icon.png', data));
+    return download(url)
+    .then(data => fs.writeFileSync('icon.png', data));
+  });
 }
 
 function setImage() {
