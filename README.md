@@ -7,7 +7,7 @@
 
 Format:
 
-BTC *current price* *24 hour price change percentage* ETH *current price* *e24 hour price change percentage*
+BTC <*current price*> <*24 hour price change percentage*> ETH <*current price*> <*24 hour price change percentage*>
 
 ## Development
 
