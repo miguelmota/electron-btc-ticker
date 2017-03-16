@@ -5,9 +5,9 @@
 <img src="./screenshot.png" height="20" />
 <img src="./screenshot_dark.png" height="20" />
 
-Format
+Format:
 
-<small>BTC *btc current price* *btc price 24 hour change percentage* ETH *eth current price* *eth price 24 hour change percentage*</small>
+BTC *current price* *24 hour price change percentage* ETH *current price* *e24 hour price change percentage*
 
 ## Development
 
