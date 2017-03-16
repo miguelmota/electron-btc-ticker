@@ -67,6 +67,9 @@ function fetch() {
       getImage(text);
       lastText = text;
     }
+  })
+  .catch((error) => {
+    console.error(error);
   });
 }
 
