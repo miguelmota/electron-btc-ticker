@@ -1,7 +1,7 @@
 var request = require('request');
 var _ = require('lodash');
 
-var Api = {
+var api = {
   getBTCTicker: function() {
     var tickerEndpoint = 'https://api.coinmarketcap.com/v1/ticker/bitcoin';
 
@@ -44,4 +44,4 @@ var Api = {
   }
 };
 
-module.exports = Api;
+module.exports = api;
